@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "ae836e78-a4e4-4571-a3f3-db1e694c7686",
+		"name": "LeadManagementApis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47539101",
+		"_collection_link": "https://aakritiruhela-331e38d0-3219299.postman.co/workspace/Aakriti-Ruhela's-Workspace~31663cae-fc71-472e-8a4a-b483005ff3bc/collection/47539101-ae836e78-a4e4-4571-a3f3-db1e694c7686?action=share&source=collection_link&creator=47539101"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/leads",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/leads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/leads",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/leads?status=pending&agent_name=Ajay%20Singh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leads"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "pending"
+						},
+						{
+							"key": "agent_name",
+							"value": "Ajay%20Singh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/leads",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/leads?status=pending",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leads"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "pending"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/leads/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer_name\": \"Ramesh Kumar\",\r\n  \"mobile_number\": \"9876543210\",\r\n  \"enquiry_for\": \"Samsung\",\r\n  \"status\": \"rejected\",\r\n  \"rejection_reason\": \"Wrong contact\",\r\n  \"agent_id\": 101,\r\n  \"agent_name\": \"Ajay Singh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/leads/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leads",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/leads/upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/HP/Downloads/10_files/lead.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/leads/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leads",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/leads/upload-final",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"customer_name\": \"Rajesh Kumar\",\r\n    \"mobile_number\": \"9876545210\",\r\n    \"enquiry_for\": \"Apple\",\r\n    \"status\": \"pending\",\r\n    \"rejection_reason\": null,\r\n    \"agent_id\": \"101\",\r\n    \"agent_name\": \"Ajay Singh\"\r\n  }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/leads/upload-final",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leads",
+						"upload-final"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/leads/preview",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"file_token\":\"1766502899_1766502899_9c6f2397a2394445b333.csv\",\r\n  \"mapping\": {\r\n    \"customer_name\": \"FullName\",\r\n    \"mobile_number\": \"MobNo\",\r\n    \"enquiry_for\": \"ProductInterest\",\r\n    \"status\": \"Stat\",\r\n    \"rejection_reason\": \"Notes\",\r\n    \"agent_id\": \"AID\",\r\n    \"agent_name\": \"Agent\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/leads/preview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"leads",
+						"preview"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
